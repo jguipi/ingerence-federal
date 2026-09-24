@@ -1,4 +1,4 @@
-import type { AutonomyLevel } from './types';
+import type { AutonomyLevel, ServiceImpactLevel } from './types';
 
 export interface AutonomyDef {
   level: AutonomyLevel;
@@ -38,3 +38,43 @@ export const autonomyLevels: AutonomyDef[] = [
 
 export const autonomyDef = (level: AutonomyLevel): AutonomyDef =>
   autonomyLevels.find((a) => a.level === level) ?? autonomyLevels[0];
+
+export interface ServiceImpactDef {
+  level: ServiceImpactLevel;
+  label: string;
+  color: string;       // green / amber / red
+  short: string;
+  description: string; // affiché sur /methodologie
+}
+
+// Axe distinct de l'autonomie : effet allégué/documenté sur les services à la population.
+// Documenté à la main par cas, toujours attribué (assertedBy). Jamais un verdict du site.
+export const serviceImpactLevels: ServiceImpactDef[] = [
+  {
+    level: 'aucun-documente',
+    label: 'Aucun effet documenté sur les services',
+    color: 'green',
+    short: 'Aucun effet documenté',
+    description:
+      "Aucune source ne rattache l'intervention (ou son insuffisance) à un effet sur les services offerts à la population.",
+  },
+  {
+    level: 'pression-alleguee',
+    label: 'Pression alléguée sur les services',
+    color: 'amber',
+    short: 'Pression alléguée',
+    description:
+      "Un acteur (province, organisme) affirme que l'intervention fédérale ou l'insuffisance des transferts exerce une pression sur les services à la population. L'affirmation est présentée telle qu'attribuée, sans être endossée par le site.",
+  },
+  {
+    level: 'documente',
+    label: 'Effet documenté sur les services',
+    color: 'red',
+    short: 'Effet documenté',
+    description:
+      "Une source d'analyse indépendante (Vérificateur général, DPB, Commissaire) établit un effet sur les services offerts à la population.",
+  },
+];
+
+export const serviceImpactDef = (level: ServiceImpactLevel): ServiceImpactDef =>
+  serviceImpactLevels.find((s) => s.level === level) ?? serviceImpactLevels[0];

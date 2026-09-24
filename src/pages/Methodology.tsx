@@ -51,6 +51,19 @@ export function Methodology() {
         versé. Lorsque les sources ne permettent pas de déterminer un montant ou un écart,
         la mention « Données insuffisantes » est affichée — aucun montant n'est estimé.
       </p>
+      <p>
+        Cas particulier des montants <strong>réellement versés</strong> par entente : les
+        Comptes publics du Canada ne ventilent les paiements de transfert que par
+        <em> totaux nationaux</em> (toutes provinces et territoires), sans ligne par
+        province; les Comptes publics du Québec regroupent les transferts fédéraux en
+        grandes catégories sans détailler chaque entente. Le versé propre au Québec, entente
+        par entente, n'est donc pas extractible de ces sources et reste « Données
+        insuffisantes ». Lorsqu'un total national versé est publié, il est cité en note à
+        titre indicatif, explicitement marqué « part QC non ventilée » — jamais divisé ni
+        attribué au Québec. Font exception les transferts calculés et publiés par province,
+        comme le Transfert canadien en santé, dont le montant versé au Québec est inscrit tel
+        quel.
+      </p>
 
       <h2>Mise à jour des données</h2>
       <p>
@@ -83,6 +96,18 @@ export function Methodology() {
           </div>
         ))}
       </dl>
+
+      <h2>Opinion publique</h2>
+      <p>
+        La page « Opinion publique » ne présente que des sondages ou résultats
+        référendaires réellement publiés, avec sondeur, date, taille d'échantillon et
+        marge d'erreur lorsque disponibles. On s'en tient aux réponses réellement
+        mesurées (Oui/Non, et indécis seulement si le sondage le publie) : aucune
+        catégorie n'est inventée, aucune moyenne n'est lissée et aucune province n'est
+        classée. Les référendums sont des sources primaires; les compilations de sondages
+        sont secondaires et à recouper avec le rapport du sondeur. Là où aucune donnée
+        fiable n'existe, la mention « Données insuffisantes » s'applique.
+      </p>
     </div>
   );
 }

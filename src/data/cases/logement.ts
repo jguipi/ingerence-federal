@@ -58,6 +58,8 @@ export const logement: Case = {
     'Entente bilatérale en vigueur (annoncée le 9 novembre 2023). Aucun litige judiciaire.',
   events: [
     { date: '2023-11-09', title: 'Annonce de l’entente Canada–Québec (Longueuil)', description: 'Contribution fédérale de 900 M$ au Québec.', sourceIds: ['facl-entente-qc'] },
+    { date: '2023-12-11', title: 'Première vague de projets', description: '999 logements annoncés.', sourceIds: ['facl-schl-2024'] },
+    { date: '2024-02-16', title: 'Deuxième vague de projets (SCHL)', description: '2 574 logements via 47 projets au Québec.', sourceIds: ['facl-schl-2024'] },
     { date: '2024', title: 'Point sur le logement — mise à jour économique du Québec', sourceIds: ['qc-point-nov2024'] },
   ],
   funding: [
@@ -72,11 +74,11 @@ export const logement: Case = {
       committed: cad(900_000_000, ['facl-entente-qc']),
       guaranteed: cad(null, ['facl-entente-qc']),
       conditional: cad(null, ['facl-entente-qc']),
-      paid: cad(null, ['facl-entente-qc', 'qc-point-nov2024'], 'Montants effectivement versés non publiés sur les pages consultées'),
+      paid: cad(null, ['facl-entente-qc', 'qc-point-nov2024', 'facl-schl-2024'], 'Montants effectivement versés non publiés; 2 574 logements engagés via 47 projets (SCHL, 16 fév. 2024), sans total décaissé par province'),
       remaining: cad(null, ['facl-entente-qc']),
       conditional_flag: true,
       conditionIds: ['facl-cibles'],
-      sourceIds: ['facl-entente-qc', 'qc-point-nov2024'],
+      sourceIds: ['facl-entente-qc', 'qc-point-nov2024', 'facl-schl-2024'],
     },
   ],
   conditions: [
@@ -91,6 +93,6 @@ export const logement: Case = {
       sourceIds: ['facl-entente-qc'],
     },
   ],
-  sourceIds: ['facl-entente-qc', 'qc-point-nov2024', 'comite-consultatif-qc'],
+  sourceIds: ['facl-entente-qc', 'qc-point-nov2024', 'facl-schl-2024', 'comite-consultatif-qc'],
   lastVerified: '2026-09-24',
 };

@@ -9,6 +9,9 @@ const links = [
   { to: '/carte', label: 'Carte' },
   { to: '/domaines', label: 'Domaines' },
   { to: '/comparaison', label: 'Comparaison' },
+  { to: '/demandes', label: 'Demandes au fédéral' },
+  { to: '/juges', label: 'Juges de la Cour suprême' },
+  { to: '/opinion', label: 'Opinion publique' },
   { to: '/sources', label: 'Sources' },
   { to: '/methodologie', label: 'Méthodologie' },
 ];

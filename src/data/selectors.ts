@@ -1,5 +1,6 @@
 import type { Case, Funding, ProvinceCode } from './types';
 import { cases } from './cases';
+import { sittingJudges } from './judges';
 
 export const getCase = (slug: string): Case | undefined =>
   cases.find((c) => c.slug === slug);
@@ -50,6 +51,25 @@ export function stats(): SiteStats {
     announcedTotal,
     conditionalProgramCount,
   };
+}
+
+export interface JudgeProvinceCount {
+  province: ProvinceCode;
+  count: number;
+  pct: number; // proportion des juges EN POSTE (0-1)
+}
+
+// Répartition des juges EN POSTE de la Cour suprême par province de nomination.
+// Calculée (jamais codée en dur). La proportion est descriptive, pas un verdict.
+export function judgesByProvince(): JudgeProvinceCount[] {
+  const sitting = sittingJudges();
+  const counts = sitting.reduce<Partial<Record<ProvinceCode, number>>>((m, j) => {
+    m[j.province] = (m[j.province] ?? 0) + 1;
+    return m;
+  }, {});
+  return (Object.entries(counts) as [ProvinceCode, number][])
+    .map(([province, count]) => ({ province, count, pct: count / sitting.length }))
+    .sort((a, b) => b.count - a.count);
 }
 
 /** Format court CAD: 6,0 G$ / 496 M$ / « Données insuffisantes » si null. */

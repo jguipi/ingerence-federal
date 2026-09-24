@@ -11,7 +11,7 @@ export const provinces: Province[] = [
   { code: 'QC', name: 'Québec', available: true },
   { code: 'ON', name: 'Ontario', available: false },
   { code: 'BC', name: 'Colombie-Britannique', available: false },
-  { code: 'AB', name: 'Alberta', available: false },
+  { code: 'AB', name: 'Alberta', available: true },
   { code: 'SK', name: 'Saskatchewan', available: false },
   { code: 'MB', name: 'Manitoba', available: false },
   { code: 'NB', name: 'Nouveau-Brunswick', available: false },

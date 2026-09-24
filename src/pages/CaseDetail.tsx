@@ -8,7 +8,7 @@ import { FundingBlock } from '../components/FundingBlock';
 import { ConditionsList } from '../components/ConditionsList';
 import { PositionPair } from '../components/PositionPair';
 import { SourceLink } from '../components/SourceLink';
-import { AutonomyPanel } from '../components/AutonomyBadge';
+import { AutonomyPanel, ServiceImpactPanel } from '../components/AutonomyBadge';
 
 export function CaseDetail() {
   const { slug } = useParams();
@@ -25,6 +25,7 @@ export function CaseDetail() {
     <article className="case-detail">
       <Link className="back" to="/cas">← Cas documentés</Link>
       <div className="cardtop">
+        <span className={`province-badge ${c.province}`}>{provinceName(c.province)}</span>
         <span className="category">{c.domains.map(domainLabel).join(', ')}</span>
         <span className="status">{statusLabel(c.status)}</span>
       </div>
@@ -36,6 +37,7 @@ export function CaseDetail() {
       <p className="lead">{c.summary}</p>
 
       {c.autonomyImpact && <AutonomyPanel impact={c.autonomyImpact} />}
+      {c.serviceImpact && <ServiceImpactPanel impact={c.serviceImpact} />}
 
       {c.funding.map((f) => <FundingBlock key={f.id} funding={f} />)}
 

@@ -5,7 +5,7 @@ import { statusLabel } from '../data/statuses';
 import { provinceName } from '../data/provinces';
 import { ecart, formatMoney } from '../data/selectors';
 import type { FilterState } from './Filters';
-import { AutonomyBadge } from './AutonomyBadge';
+import { AutonomyBadge, ServiceImpactBadge } from './AutonomyBadge';
 
 const statusColor: Record<string, string> = {
   documente: 'blue',
@@ -39,6 +39,7 @@ export function CaseCard({ c }: { c: Case }) {
   return (
     <article className="card">
       <div className="cardtop">
+        <span className={`province-badge ${c.province}`}>{provinceName(c.province)}</span>
         <span className="category">{c.domains.map(domainLabel).join(', ')}</span>
         <span className={`status ${statusColor[c.status] ?? 'gray'}`}>{statusLabel(c.status)}</span>
       </div>
@@ -47,9 +48,10 @@ export function CaseCard({ c }: { c: Case }) {
         {provinceName(c.province)} · {c.dateStart}{c.dateEnd ? `–${c.dateEnd}` : ''}
       </div>
       <p>{c.summary}</p>
-      {c.autonomyImpact && (
+      {(c.autonomyImpact || c.serviceImpact) && (
         <div className="card-autonomy">
-          <AutonomyBadge impact={c.autonomyImpact} />
+          {c.autonomyImpact && <AutonomyBadge impact={c.autonomyImpact} />}
+          {c.serviceImpact && <ServiceImpactBadge impact={c.serviceImpact} />}
         </div>
       )}
       {mainFunding && (

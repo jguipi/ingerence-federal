@@ -10,6 +10,9 @@ import { Timeline } from './pages/Timeline';
 import { Map } from './pages/Map';
 import { Domains } from './pages/Domains';
 import { Compare } from './pages/Compare';
+import { Requests } from './pages/Requests';
+import { Judges } from './pages/Judges';
+import { Opinion } from './pages/Opinion';
 import { Sources } from './pages/Sources';
 import { Methodology } from './pages/Methodology';
 import './styles.css';
@@ -27,11 +30,18 @@ const router = createBrowserRouter([
       { path: '/domaines', element: <Domains /> },
       { path: '/domaines/:id', element: <Domains /> },
       { path: '/comparaison', element: <Compare /> },
+      { path: '/demandes', element: <Requests /> },
+      { path: '/juges', element: <Judges /> },
+      { path: '/opinion', element: <Opinion /> },
       { path: '/sources', element: <Sources /> },
       { path: '/methodologie', element: <Methodology /> },
     ],
   },
-]);
+], {
+  // En prod, le site est servi sous /ingerence-federal/ (GitHub Pages). BASE_URL vient de
+  // `base` dans vite.config.ts; en dev il vaut '/' donc basename = '' (aucun impact local).
+  basename: import.meta.env.BASE_URL.replace(/\/$/, ''),
+});
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
