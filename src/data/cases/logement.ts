@@ -18,6 +18,13 @@ export const logement: Case = {
   dateEnd: '2027',
   status: 'entente-federale-provinciale',
   interventionType: 'entente',
+  autonomyImpact: {
+    level: 'encadree',
+    rationale:
+      "La contribution fédérale est liée à des cibles et conditions de construction de logements qui orientent l'action provinciale et municipale sans se substituer à la compétence provinciale.",
+    assertedBy: "Lecture des conditions de l'entente",
+    sourceIds: ['facl-entente-qc'],
+  },
   summary:
     "Le Canada et le Québec ont conclu une entente prévoyant une contribution fédérale de 900 M$ pour accélérer la construction de logements.",
   description:

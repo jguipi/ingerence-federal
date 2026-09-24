@@ -17,6 +17,13 @@ export const santeTransferts: Case = {
   dateEnd: '2027',
   status: 'entente-federale-provinciale',
   interventionType: 'financement-conditionnel',
+  autonomyImpact: {
+    level: 'encadree',
+    rationale:
+      "L'accord assortit le financement de priorités pancanadiennes et d'obligations de reddition de comptes, mais reconnaît la maîtrise d'œuvre du Québec sur la planification et la gestion des services.",
+    assertedBy: "Lecture des conditions de l'accord et Comité consultatif du Québec",
+    sourceIds: ['accord-sante-qc', 'comite-consultatif-qc'],
+  },
   summary:
     'Ottawa a proposé un financement additionnel en santé lié à des priorités pancanadiennes. Le Québec a conclu une entente qui reconnaît sa compétence et lui permet de déterminer ses priorités.',
   description:

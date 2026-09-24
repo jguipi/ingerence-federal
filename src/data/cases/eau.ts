@@ -14,6 +14,13 @@ export const eau: Case = {
   dateEnd: '2024',
   status: 'conteste',
   interventionType: 'loi',
+  autonomyImpact: {
+    level: 'reduite',
+    rationale:
+      "La création d'une agence fédérale de l'eau douce introduit une instance fédérale dans un champ où le Québec exerce des responsabilités, ce qui crée un risque de chevauchement structurel contesté par le Québec.",
+    assertedBy: 'Comité consultatif du Québec',
+    sourceIds: ['comite-consultatif-qc'],
+  },
   summary:
     "La création d'une Agence canadienne de l'eau soulève un enjeu de partage de compétences et de chevauchement avec les responsabilités du Québec.",
   description:

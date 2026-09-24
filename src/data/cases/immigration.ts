@@ -16,6 +16,13 @@ export const immigration: Case = {
   dateEnd: '2026',
   status: 'en-cours',
   interventionType: 'intervention-administrative',
+  autonomyImpact: {
+    level: 'encadree',
+    rationale:
+      "L'immigration est une compétence partagée: l'Accord Canada-Québec attribue des rôles précis à chaque ordre de gouvernement; les tensions portent sur les volumes et les coûts, non sur un retrait de compétence.",
+    assertedBy: 'Accord Canada-Québec et Comité consultatif du Québec',
+    sourceIds: ['ircc-qc-faits', 'comite-consultatif-qc'],
+  },
   summary:
     "Immigration relève de responsabilités partagées entre Ottawa et Québec; des tensions portent sur les volumes de résidents temporaires et les coûts des demandeurs d'asile.",
   description:

@@ -18,6 +18,13 @@ export const soutienDomicile: Case = {
   dateEnd: '2025',
   status: 'documente',
   interventionType: 'programme',
+  autonomyImpact: {
+    level: 'encadree',
+    rationale:
+      'Le fédéral finance directement des organismes offrant des services qui touchent les réseaux provinciaux de santé et de services sociaux, orientant l\'offre sans passer par la province.',
+    assertedBy: 'Comité consultatif du Québec',
+    sourceIds: ['comite-consultatif-qc'],
+  },
   summary:
     'Ottawa finance directement des organismes pour aider les aînés à rester à domicile.',
   description:

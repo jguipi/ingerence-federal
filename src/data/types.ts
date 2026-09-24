@@ -92,6 +92,20 @@ export interface Position {
   sourceIds: string[];
 }
 
+export type AutonomyLevel = 'preservee' | 'encadree' | 'reduite';
+
+/**
+ * Atteinte documentée à l'autonomie provinciale. Ce n'est PAS un verdict du site ni un
+ * score calculé (§13) : le niveau est établi à la main d'après les faits du dossier
+ * (conditions, mécanisme, positions) et rattaché à sa source et à qui l'affirme.
+ */
+export interface AutonomyImpact {
+  level: AutonomyLevel;
+  rationale: string;   // pourquoi ce niveau, en une phrase factuelle
+  assertedBy: string;  // qui l'affirme (ex. « Comité consultatif du Québec », « lecture des conditions de l'entente »)
+  sourceIds: string[];
+}
+
 export interface Case {
   id: string;
   slug: string;
@@ -103,6 +117,7 @@ export interface Case {
   dateEnd?: string;
   status: CaseStatus;
   interventionType: InterventionType;
+  autonomyImpact?: AutonomyImpact; // optionnel: absent = non documenté
   summary: string;
   description: string;
   federalAction: string;

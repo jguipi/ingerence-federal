@@ -1,4 +1,5 @@
 import { statuses } from '../data/statuses';
+import { autonomyLevels } from '../data/autonomy';
 
 export function Methodology() {
   return (
@@ -56,6 +57,22 @@ export function Methodology() {
         Chaque dossier affiche sa date de dernière vérification. Les montants versés sont
         mis à jour lorsque de nouveaux versements sont documentés.
       </p>
+
+      <h2>Atteinte à l'autonomie provinciale</h2>
+      <p>
+        Chaque dossier peut afficher un indicateur d'atteinte à l'autonomie provinciale sur
+        trois niveaux. Cet indicateur n'est pas un score calculé automatiquement ni un verdict
+        du site : il est établi à partir des faits du dossier (mécanisme utilisé, conditions,
+        positions documentées) et rattaché à sa source et à qui l'affirme.
+      </p>
+      <dl className="status-defs">
+        {autonomyLevels.map((a) => (
+          <div key={a.level}>
+            <dt>{a.label}</dt>
+            <dd>{a.description}</dd>
+          </div>
+        ))}
+      </dl>
 
       <h2>Statuts</h2>
       <dl className="status-defs">

@@ -5,6 +5,7 @@ import { statusLabel } from '../data/statuses';
 import { provinceName } from '../data/provinces';
 import { ecart, formatMoney } from '../data/selectors';
 import type { FilterState } from './Filters';
+import { AutonomyBadge } from './AutonomyBadge';
 
 const statusColor: Record<string, string> = {
   documente: 'blue',
@@ -25,6 +26,7 @@ export function matchCase(c: Case, f: FilterState): boolean {
   if (f.domain && !c.domains.includes(f.domain)) return false;
   if (f.status && c.status !== f.status) return false;
   if (f.type && c.interventionType !== f.type) return false;
+  if (f.autonomy && c.autonomyImpact?.level !== f.autonomy) return false;
   if (f.year && !(c.dateStart <= f.year && (c.dateEnd ?? c.dateStart) >= f.year)) return false;
   if (f.withConditions && c.conditions.length === 0 && !c.funding.some((x) => x.conditional_flag)) return false;
   if (f.withFunding && c.funding.length === 0) return false;
@@ -45,6 +47,11 @@ export function CaseCard({ c }: { c: Case }) {
         {provinceName(c.province)} · {c.dateStart}{c.dateEnd ? `–${c.dateEnd}` : ''}
       </div>
       <p>{c.summary}</p>
+      {c.autonomyImpact && (
+        <div className="card-autonomy">
+          <AutonomyBadge impact={c.autonomyImpact} />
+        </div>
+      )}
       {mainFunding && (
         <div className="card-funding">
           <span>Annoncé <strong>{formatMoney(mainFunding.announced.amount)}</strong></span>

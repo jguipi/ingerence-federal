@@ -1,6 +1,7 @@
 import { provinces } from '../data/provinces';
 import { domains } from '../data/domains';
 import { statuses, interventionTypes } from '../data/statuses';
+import { autonomyLevels } from '../data/autonomy';
 
 export interface FilterState {
   query: string;
@@ -9,12 +10,13 @@ export interface FilterState {
   status: string;
   type: string;
   year: string;
+  autonomy: string;
   withConditions: boolean;
   withFunding: boolean;
 }
 
 export const emptyFilters: FilterState = {
-  query: '', province: '', domain: '', status: '', type: '', year: '',
+  query: '', province: '', domain: '', status: '', type: '', year: '', autonomy: '',
   withConditions: false, withFunding: false,
 };
 
@@ -79,6 +81,15 @@ export function Filters({ value, onChange, years, show = {} }: Props) {
           <select value={value.status} onChange={(e) => set('status', e.target.value)}>
             <option value="">Tous</option>
             {statuses.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
+          </select>
+        </label>
+      )}
+      {vis('autonomy') && (
+        <label className="field">
+          <span className="field-label">Autonomie provinciale</span>
+          <select value={value.autonomy} onChange={(e) => set('autonomy', e.target.value)}>
+            <option value="">Tous</option>
+            {autonomyLevels.map((a) => <option key={a.level} value={a.level}>{a.label}</option>)}
           </select>
         </label>
       )}

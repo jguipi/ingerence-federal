@@ -71,7 +71,7 @@ export function Funding() {
         value={filters}
         onChange={setFilters}
         years={years}
-        show={{ domain: false, status: false, type: false, year: false, withFunding: false }}
+        show={{ domain: false, status: false, type: false, year: false, autonomy: false, withFunding: false }}
       />
 
       {chartData.length > 0 && (

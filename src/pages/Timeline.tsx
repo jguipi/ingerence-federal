@@ -54,7 +54,7 @@ export function Timeline() {
         value={filters}
         onChange={setFilters}
         years={years}
-        show={{ status: false, type: false, withConditions: false, withFunding: false }}
+        show={{ status: false, type: false, autonomy: false, withConditions: false, withFunding: false }}
       />
       <ol className="timeline big">
         {filtered.map((e, i) => (

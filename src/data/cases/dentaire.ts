@@ -17,6 +17,13 @@ export const dentaire: Case = {
   dateEnd: '2026',
   status: 'documente',
   interventionType: 'programme',
+  autonomyImpact: {
+    level: 'preservee',
+    rationale:
+      "Programme fédéral distinct, financé et administré par Ottawa; il ne remplace pas les programmes québécois couverts par la RAMQ et n'impose pas de condition à la compétence provinciale.",
+    assertedBy: 'Lecture du programme fédéral et coordination avec les programmes du Québec',
+    sourceIds: ['rcsd-annonce', 'rcsd-qc-coordination'],
+  },
   summary:
     'Le fédéral a créé un régime national financé et administré par Ottawa pour les résidents admissibles sans assurance dentaire privée.',
   description:

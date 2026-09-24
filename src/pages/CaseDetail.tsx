@@ -8,6 +8,7 @@ import { FundingBlock } from '../components/FundingBlock';
 import { ConditionsList } from '../components/ConditionsList';
 import { PositionPair } from '../components/PositionPair';
 import { SourceLink } from '../components/SourceLink';
+import { AutonomyPanel } from '../components/AutonomyBadge';
 
 export function CaseDetail() {
   const { slug } = useParams();
@@ -33,6 +34,8 @@ export function CaseDetail() {
         {interventionTypeLabel(c.interventionType)}
       </div>
       <p className="lead">{c.summary}</p>
+
+      {c.autonomyImpact && <AutonomyPanel impact={c.autonomyImpact} />}
 
       {c.funding.map((f) => <FundingBlock key={f.id} funding={f} />)}
 

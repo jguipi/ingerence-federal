@@ -177,6 +177,29 @@ p { color: #4d596f; }
 .status-defs dt { font-weight: 700; color: #172033; margin-top: 12px; }
 .status-defs dd { margin: 2px 0 0; color: #55627a; }
 
+/* --- badge autonomie --- */
+.card-autonomy { margin: 10px 0; }
+.autonomy-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; border: 1px solid transparent;
+}
+.autonomy-badge.green { color: #20704b; background: #eaf8f0; border-color: #bfe6d0; }
+.autonomy-badge.amber { color: #8a5a12; background: #fff5e6; border-color: #f2d9a6; }
+.autonomy-badge.red { color: #a23b3b; background: #fff0f0; border-color: #f0c8c8; }
+
+.autonomy-panel {
+  border: 1px solid #dfe5ef; border-left-width: 5px; border-radius: 12px;
+  padding: 16px 18px; margin: 18px 0; background: #fff;
+}
+.autonomy-panel.green { border-left-color: #20704b; }
+.autonomy-panel.amber { border-left-color: #c9902f; }
+.autonomy-panel.red { border-left-color: #a23b3b; }
+.ap-head { display: flex; align-items: center; gap: 8px; font-size: 17px; }
+.autonomy-panel.green .ap-head { color: #20704b; }
+.autonomy-panel.amber .ap-head { color: #8a5a12; }
+.autonomy-panel.red .ap-head { color: #a23b3b; }
+.ap-by { font-size: 13px; color: #758198; }
+
 /* --- footer --- */
 .site-footer { margin-top: 40px; padding: 26px 20px; background: #172033; color: #dce3ef; }
 .site-footer strong { color: #fff; }

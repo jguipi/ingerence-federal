@@ -17,6 +17,13 @@ export const garderies: Case = {
   dateEnd: '2026',
   status: 'entente-federale-provinciale',
   interventionType: 'entente',
+  autonomyImpact: {
+    level: 'preservee',
+    rationale:
+      "L'entente est asymétrique et reconnaît le réseau québécois de services de garde préexistant; le Québec conserve son modèle plutôt que d'intégrer un cadre pancanadien uniforme.",
+    assertedBy: 'Nature asymétrique de l\'entente et Comité consultatif du Québec',
+    sourceIds: ['accords-fpt', 'comite-consultatif-qc'],
+  },
   summary:
     "Le Canada et le Québec ont conclu une entente asymétrique de financement des services de garde, reconnaissant le réseau québécois préexistant.",
   description:
